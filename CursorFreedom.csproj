@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BepInEx.Analyzers" Version="1.0.*">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="BepInEx.Core" Version="5.4.19" />
+    <PackageReference Include="RiskOfRain2.GameLibs" Version="1.2.1-r.0" />
+    <PackageReference Include="UnityEngine.Modules" Version="2019.4.26" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="MMHOOK_Assembly-CSharp">
+      <HintPath>..\..\..\AppData\Roaming\r2modmanPlus-local\RiskOfRain2\profiles\Testing\BepInEx\plugins\MMHOOK\MMHOOK_Assembly-CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="MMHOOK_RoR2">
+      <HintPath>..\..\..\AppData\Roaming\r2modmanPlus-local\RiskOfRain2\profiles\Testing\BepInEx\plugins\MMHOOK\MMHOOK_RoR2.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="copy /Y &quot;$(TargetPath)&quot; &quot;C:\Users\justin\AppData\Roaming\r2modmanPlus-local\RiskOfRain2\profiles\Testing\BepInEx\plugins\CursorFreedom\lib\$(TargetFileName)&quot;&#xD;&#xA;copy /Y &quot;$(SolutionDir)manifest.json&quot;  &quot;C:\Users\justin\AppData\Roaming\r2modmanPlus-local\RiskOfRain2\profiles\Testing\BepInEx\plugins\CursorFreedom\&quot;&#xD;&#xA;copy /Y &quot;$(SolutionDir)icon.png&quot;  &quot;C:\Users\justin\AppData\Roaming\r2modmanPlus-local\RiskOfRain2\profiles\Testing\BepInEx\plugins\CursorFreedom\&quot;&#xD;&#xA;copy /Y &quot;$(SolutionDir)README.md&quot;  &quot;C:\Users\justin\AppData\Roaming\r2modmanPlus-local\RiskOfRain2\profiles\Testing\BepInEx\plugins\CursorFreedom\&quot;" />
+  </Target>
+
+</Project>

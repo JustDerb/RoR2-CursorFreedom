@@ -1,0 +1,10 @@
+﻿{
+    "name": "CursorFreedom",
+    "version_number": "1.0.0",
+    "website_url": "https://github.com/JustDerb/RoR2-CursorFreedom",
+    "description": "Free your cursor/mouse from the confines of the application window! In windowed mode, your cursor is no longer trapped within the bounds of the game.",
+    "dependencies": [
+        "bbepis-BepInExPack-5.4.1801",
+        "RiskofThunder-HookGenPatcher-1.2.3"
+    ]
+}
